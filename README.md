@@ -10,7 +10,10 @@ Java (JDK 17 o superior recomendado)
 IntelliJ IDEA como entorno de desarrollo (IDE)
 API Exchange Rate para obtener tipos de cambio entre monedas (Se requiere registro gratuito para obtener un api key)
 
-Capturas de pantalla: 
+api: 
+<img width="1806" height="871" alt="image" src="https://github.com/user-attachments/assets/4bacc696-7e14-4c67-9263-0a0b0a3428f1" />
+
+Capturas de pantalla consola: 
 
 <img width="1479" height="580" alt="image" src="https://github.com/user-attachments/assets/1945b73c-2349-40f4-8085-ba5451df14ae" />
 <img width="1594" height="593" alt="image" src="https://github.com/user-attachments/assets/3133a9e7-05a9-4a78-8e5e-5cc9863286fb" />
