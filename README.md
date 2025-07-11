@@ -12,5 +12,6 @@ API Exchange Rate para obtener tipos de cambio entre monedas (Se requiere regist
 
 Capturas de pantalla: 
 
-<img width="863" height="613" alt="image" src="https://github.com/user-attachments/assets/c94dfc92-f2a3-4b86-98e2-d2d5b2e4c2c8" />
-<img width="658" height="476" alt="image" src="https://github.com/user-attachments/assets/85d7da6e-3a37-42e3-8108-ae6bb103c386" />
+<img width="1479" height="580" alt="image" src="https://github.com/user-attachments/assets/1945b73c-2349-40f4-8085-ba5451df14ae" />
+<img width="1594" height="593" alt="image" src="https://github.com/user-attachments/assets/3133a9e7-05a9-4a78-8e5e-5cc9863286fb" />
+
