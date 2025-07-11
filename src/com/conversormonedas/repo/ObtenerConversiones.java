@@ -9,6 +9,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -31,20 +32,30 @@ public class ObtenerConversiones {
         String json = String.valueOf(response.body());
         Conversiones conversiones = gson.fromJson(json, Conversiones.class);
 
-
-        for (Map.Entry<String, Double> entry : conversiones.conversion_rates().entrySet()) {
-            if(monedaCambio.equalsIgnoreCase(entry.getKey())){
-                valorCambio = entry.getValue();
-                break;
+            for (Map.Entry<String, Double> entry : conversiones.conversion_rates().entrySet()) {
+                if(monedaCambio.equalsIgnoreCase(entry.getKey())){
+                    valorCambio = entry.getValue();
+                    break;
+                }
             }
-        }
+
         return valorCambio;
     }
 
     public void convertir(String monedaBase, String monedaCambio) throws IOException, InterruptedException{
-        obtenerCambio(monedaBase,monedaCambio);
-        System.out.println("Ingrese el valor que deseas convertir: ");
-        Double valor = scanner.nextDouble();
-        System.out.println( "El valor "+valor+"["+monedaBase+"]"+" corresponde al valor final de -->> "+valor * valorCambio+"["+monedaCambio+"]\n\n");
+        try{
+            obtenerCambio(monedaBase,monedaCambio);
+            Double valor = 0.0;
+            System.out.println("Ingrese el valor que deseas convertir: ");
+            valor = scanner.nextDouble();
+            System.out.println( "El valor "+valor+"["+monedaBase+"]"+" corresponde al valor final de -->> "+valor * valorCambio+"["+monedaCambio+"]\n\n");
+        }catch(InputMismatchException e){
+            System.out.println("No se reconoce la entrada, ingrese un valor numerico");
+            scanner.nextLine();
+        }catch (NullPointerException e){
+            System.out.println("No se pudo obtener la conversion para: "+monedaBase);
+        }catch (Exception e){
+            System.out.println("Ocurrio un error inesperado! "+e.getMessage());
+        }
     }
 }
